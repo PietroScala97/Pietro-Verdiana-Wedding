@@ -3,43 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Our Wedding — Maria & Marco</title>
+  <title>Il nostro matrimonio — Pietro & Verdiana</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- favicon opzionale -->
+  <style>
+    /* Mappe responsive */
+    .embed-map-fixed {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 66.66%; /* proporzione 3:2 (altezza/larghezza) */
+      overflow: hidden;
+    }
+
+    .embed-map-fixed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
-<div id="intro">
-  <div class="intro-content">
-    <h1>Pietro & Verdiana</h1>
-    <p>1 Giugno 2026</p>
+  <div id="intro">
+    <div class="intro-content">
+      <h1>Pietro & Verdiana</h1>
+      <p>1 Giugno 2026</p>
+    </div>
   </div>
-</div>
+
   <header class="hero">
     <div class="hero-content">
       <h1>Pietro & Verdiana</h1>
-      <p>We are getting married — 12 July 2026</p>
+      <p>1 Giugno 2026</p>
       <a class="btn" href="#rsvp">RSVP</a>
     </div>
   </header>
 
   <main class="container">
     <section id="about" class="card">
-      <h2>Our Story</h2>
-      <p>Short text about you two. Replace with your story — how you met, the proposal, a few warm words.</p>
+      <h2>La nostra storia</h2>
+      <p>Siamo Pietro e Verdiana…</p>
     </section>
 
     <section id="when-where" class="card">
-      <h2>Date & Location</h2>
-      <p><strong>Date:</strong> 12 July 2026</p>
-      <p><strong>Ceremony:</strong> Chiesa di Santa Maria, Piazza XX, 15:00</p>
-      <p><strong>Reception:</strong> Villa Rosa, Via del Mare 10 — 17:30</p>
-
-      <!-- Google Maps embed: personalizza l'URL con la tua posizione -->
-      <div class="map-wrapper">
+      <h2>Data e luogo della cerimonia</h2>
+      <p><strong>Data:</strong> Lunedì, 1 Giugno 2026</p>
+      
+      <p><strong>Cerimonia:</strong> Chiesa di Santa Teresa alla Kalsa, Piazza Kalsa, 1 – 90133 Palermo (PA)</p>
+      
+      <!-- Mappa Chiesa responsive -->
+      <div class="embed-map-fixed">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...replace_with_your_embed..."
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Chiesa%20Santa%20teresa%20Kalsa%2C%20Palermo&t=&z=12&ie=UTF8&iwloc=B&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
+
+      <p><strong>Ricevimento:</strong> Sala Ricevimenti AmaLuna (Baglio della Luna) – Alcamo (TP) <a href="https://www.google.com/maps/search/Baglio+Amaluna+Alcamo" target="_blank">Visualizza su Google Maps</a></p>
+
+      <!-- Mappa Sala Ricevimenti responsive -->
+      <div class="embed-map-fixed">
+        <iframe
+          src="https://maps.google.com/maps?width=600&height=400&hl=en&q=37.996797%2C%2013.028668%20&t=&z=12&ie=UTF8&iwloc=B&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <h3>Come arrivare</h3>
+      <p><strong>Da Palermo:</strong> Prendere l’autostrada A29 direzione Mazara del Vallo, uscita Balestrate, poi SP17 e quindi SS113 verso Alcamo fino a Baglio Amaluna.</p>
+      <p><strong>Da Alcamo:</strong> Seguire la SS113 in direzione Palermo e seguire le indicazioni per Baglio Amaluna.</p>
     </section>
 
     <section id="program" class="card">
@@ -53,7 +91,6 @@
     <section id="gallery" class="card">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <!-- Sostituisci src con le tue foto -->
         <img src="https://picsum.photos/seed/1/600/400" alt="photo1">
         <img src="https://picsum.photos/seed/2/600/400" alt="photo2">
         <img src="https://picsum.photos/seed/3/600/400" alt="photo3">
@@ -97,18 +134,17 @@
       </form>
 
       <p id="form-status" class="muted"></p>
-
       <p class="muted">If you prefer email, write to: <a href="mailto:you@example.com">you@example.com</a></p>
     </section>
 
     <section class="card">
       <h2>Gift list</h2>
-      <p>Link to registry or bank details, or write "No gifts — presence is enough".</p>
+      <p>Link to registry or bank details, o scrivi "No gifts — presence is enough".</p>
     </section>
   </main>
 
   <footer>
-    <p>Made with love • Replace text & images with your own</p>
+    <p>Fatto con amore • Sostituisci testi e immagini con i tuoi contenuti</p>
   </footer>
 
   <script src="script.js"></script>
