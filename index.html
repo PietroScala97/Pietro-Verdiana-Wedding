@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Wedding — Maria & Marco</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon opzionale -->
+</head>
+<body>
+<div id="intro">
+  <div class="intro-content">
+    <h1>Pietro & Verdiana</h1>
+    <p>1 Giugno 2026</p>
+  </div>
+</div>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Pietro & Verdiana</h1>
+      <p>We are getting married — 12 July 2026</p>
+      <a class="btn" href="#rsvp">RSVP</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="card">
+      <h2>Our Story</h2>
+      <p>Short text about you two. Replace with your story — how you met, the proposal, a few warm words.</p>
+    </section>
+
+    <section id="when-where" class="card">
+      <h2>Date & Location</h2>
+      <p><strong>Date:</strong> 12 July 2026</p>
+      <p><strong>Ceremony:</strong> Chiesa di Santa Maria, Piazza XX, 15:00</p>
+      <p><strong>Reception:</strong> Villa Rosa, Via del Mare 10 — 17:30</p>
+
+      <!-- Google Maps embed: personalizza l'URL con la tua posizione -->
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...replace_with_your_embed..."
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <section id="program" class="card">
+      <h2>Program</h2>
+      <p>15:00 Ceremony — Chiesa di Santa Maria</p>
+      <p>17:30 Reception — Villa Rosa</p>
+      <p>20:00 Dinner & Dancing</p>
+      <p>Dress code: Smart Casual</p>
+    </section>
+
+    <section id="gallery" class="card">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <!-- Sostituisci src con le tue foto -->
+        <img src="https://picsum.photos/seed/1/600/400" alt="photo1">
+        <img src="https://picsum.photos/seed/2/600/400" alt="photo2">
+        <img src="https://picsum.photos/seed/3/600/400" alt="photo3">
+      </div>
+    </section>
+
+    <section id="rsvp" class="card">
+      <h2>RSVP</h2>
+      <p>Please let us know if you can come — we appreciate a reply by 01 June 2026.</p>
+
+      <form id="rsvp-form">
+        <label>
+          Your name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Will you attend?
+          <select name="attend" required>
+            <option value="">Select</option>
+            <option value="yes">Yes — I'll be there</option>
+            <option value="no">No — can't make it</option>
+          </select>
+        </label>
+        <label>
+          Guests (number)
+          <input type="number" name="guests" min="0" value="0" />
+        </label>
+        <label>
+          Message (optional)
+          <textarea name="message" rows="3"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit">Send RSVP</button>
+          <button type="button" id="download-csv">Download CSV</button>
+        </div>
+      </form>
+
+      <p id="form-status" class="muted"></p>
+
+      <p class="muted">If you prefer email, write to: <a href="mailto:you@example.com">you@example.com</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Gift list</h2>
+      <p>Link to registry or bank details, or write "No gifts — presence is enough".</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with love • Replace text & images with your own</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
