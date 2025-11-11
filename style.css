@@ -19,7 +19,7 @@ body{
   padding:60px 20px;
   text-align:center;
 }
-.hero h1{font-size:2.6rem;margin:0 0 .25rem}
+.hero h1{font-size:3.6rem;margin:0 0 .25rem}
 .hero p{margin:0 0 1rem; opacity:.95}
 .btn{
   display:inline-block;
@@ -70,13 +70,17 @@ footer{padding:20px;text-align:center;color:var(--muted)}
 #intro {
   position: fixed;
   inset: 0;
-  background: white; /* puoi mettere un colore o sfumatura */
+  background: linear-gradient(135deg, #c8a2c8, #87aee0);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   opacity: 1;
   transition: opacity 1.2s ease-out;
+}
+
+h1 {
+  font-weight: normal !important;
 }
 
 #intro.fade-out {
@@ -93,7 +97,7 @@ footer{padding:20px;text-align:center;color:var(--muted)}
   font-size: 13.6rem;
   margin: 0;
   color: #333;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 
@@ -102,11 +106,15 @@ footer{padding:20px;text-align:center;color:var(--muted)}
   margin: 0;
   color: #333;
   letter-spacing: 2px;
+  line-height: 1.1; /* riduce lo spazio sotto */
 }
 
 .intro-content p {
-  margin-top: 10px;
-  font-size: 5rem;
+  font-family: "Palace Script MT", cursive;
+  margin-top: 1px;
+  font-size: 10.6rem; /* armonioso e uguale allo stile generale */
+  font-weight: normal !important;
+  line-height: 1.1; /* riduce lo spazio sotto */
   color: #666;
 }
 
@@ -114,3 +122,151 @@ footer{padding:20px;text-align:center;color:var(--muted)}
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a img:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s ease;
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #f08a5d;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+h2:hover::after {
+  width: 100%;
+}
+
+
+h2 {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #7BAFD4; /* colore underline base */
+  bottom: -5px;
+  left: 0;
+  transition: background 0.3s;
+}
+
+/* Quando attivo (cliccato) */
+h2.active::after {
+  background: #7BAFD4; /* cambia colore quando cliccato */
+}
+
+
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 0; /* zero padding iniziale */
+}
+
+/* quando aperto */
+.accordion-content.open {
+  padding: 10px 0;
+}
+
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #7BAFD4;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.5s;
+}
+
+h2:hover::after {
+  width: 100%;
+}
+
+#form-status {
+  color: green;      /* testo verde */
+  font-weight: bold;  /* opzionale, più visibile */
+  margin-top: 10px;   /* spazio sopra */
+}
+
+
+
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 0;          /* di base 0 */
+  height: 3px;
+  background: #6a2c70;
+  bottom: -5px;
+  left: 0;
+  transition: width 2.5s;
+}
+
+/* quando il titolo è attivo (entrato nello schermo) */
+h2.active::after {
+  width: 100%;
+}
+
+
+
+
+
+h2 {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+h2:hover {
+  transform: scale(1.05);
+  color: #7BAFD4; /* carta da zucchero */
+}
+body {
+  background: linear-gradient(135deg, #f5f7fa, #7BAFD4);
+}
+h2 {
+  background: linear-gradient(90deg, #7BAFD4, #6a2c70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+
+
