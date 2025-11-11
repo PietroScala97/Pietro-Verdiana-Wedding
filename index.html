@@ -140,65 +140,72 @@ Nella partecipazione abbiamo voluto raccontare un dettaglio di noi: ogni element
   </div>
 
 
-    <section id="Conferma di Partecipazione" class="card">
-      <h2>Conferma di Partecipazione</h2>
-      <p>Vi preghiamo di farci sapere se potrete partecipare — Chiediamo gentilmente di confermare entro il 17 Maggio 2026.</p>
+<section id="Conferma-di-Partecipazione" class="card">
+  <h2>Conferma di Partecipazione</h2>
+  <p>Vi preghiamo di farci sapere se potrete partecipare — Chiediamo gentilmente di confermare entro il 17 Maggio 2026.</p>
 
-      <form id="rsvp-form">
-        <label>
-          Nome e Cognome / Famiglia
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Email o Numero di telefono (opzionale)
-          <input type="text" name="email" required />
-        </label>
-        <label>
-          Confermi la partecipazione?
-          <select name="attend" required>
-            <option value="">Seleziona</Opzioni>
-            <option value="Si">Si — Ci sarò/saremo</option>
-            <option value="No">No — Non ci sarò/saremo</option>
-          </select>
-        </label>
-        <label>
-  N° Adulti partecipanti
-  <input type="number" name="guests" min="1" value="0" />
-</label>
+  <form id="rsvp-form">
+    <label>
+      Nome e Cognome / Famiglia
+      <input type="text" name="name" required />
+    </label>
 
-<label>
-  N° Bambini partecipanti (Menù bambini)
-  <input type="number" name="menu_bambini" min="0" value="0" />
-</label>
+    <label>
+      Email o Numero di telefono (opzionale)
+      <input type="text" name="email" required />
+    </label>
 
-<label>
-  N° neonati (No cena)
-  <input type="number" name="neonati" min="0" value="0" />
-</label>
-<label> Eventuali allergie/intolleranze (Specificare) <textarea name="message" rows="5"></textarea> </label>
+    <label>
+      Confermi la partecipazione?
+      <select name="attend" required>
+        <option value="">Seleziona</option>
+        <option value="Si — Ci sarò/saremo">Si — Ci sarò/saremo</option>
+        <option value="No — Non ci sarò/saremo">No — Non ci sarò/saremo</option>
+      </select>
+    </label>
 
-        <div class="form-actions">
-          <button type="submit">Invia Conferma</button>
-          <button type="button" id="download-csv">Scarica la conferma (opzionale)</button>
-        </div>
-      </form>
+    <label>
+      N° Adulti partecipanti
+      <input type="number" name="guests" min="1" value="1" required />
+    </label>
 
-      <p id="form-status" class="muted"></p>
-      <p class="muted">
-  Se preferisci, puoi contattarci anche su WhatsApp:<br>
-  <a href="https://wa.me/393349917567" style="text-decoration:none;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-         alt="WhatsApp" style="width:18px; vertical-align:middle; margin-right:6px;">
-    Piero — +39 334 9917567
-  </a><br>
+    <label>
+      N° Bambini partecipanti (Menù bambini)
+      <input type="number" name="menu_bambini" min="0" value="0" required />
+    </label>
 
-  <a href="https://wa.me/393282052231" style="text-decoration:none;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-         alt="WhatsApp" style="width:18px; vertical-align:middle; margin-right:6px;">
-    Verdiana — +39 328 2052231
-  </a>
-</p>
-    </section>
+    <label>
+      N° Neonati (No cena)
+      <input type="number" name="neonati" min="0" value="0" required />
+    </label>
+
+    <label>
+      Eventuali allergie/intolleranze (Specificare)
+      <textarea name="message" rows="5"></textarea>
+    </label>
+
+    <div class="form-actions">
+  <button type="submit">Invia Conferma</button>
+</div>
+
+  <p id="form-status" class="muted"></p>
+
+  <p class="muted">
+    Se preferisci, puoi contattarci anche su WhatsApp:<br>
+    <a href="https://wa.me/393349917567" style="text-decoration:none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+           alt="WhatsApp" style="width:18px; vertical-align:middle; margin-right:6px;">
+      Piero — +39 334 9917567
+    </a><br>
+
+    <a href="https://wa.me/393282052231" style="text-decoration:none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+           alt="WhatsApp" style="width:18px; vertical-align:middle; margin-right:6px;">
+      Verdiana — +39 328 2052231
+    </a>
+  </p>
+</section>
+
 
 <section id="visite" class="card">
   <h2>Visite di Nozze</h2>
