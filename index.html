@@ -26,6 +26,20 @@
   </style>
 </head>
 <body>
+
+<nav id="sidebar">
+  <ul>
+    <li><a href="#about">La nostra storia</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#when-where">Dove e Quando</a></li>
+    <li><a href="#program">L'evento</a></li>
+    <li><a href="#Conferma-di-Partecipazione">Conferma di Partecipazione</a></li>
+    <li><a href="#visite">Visite di Nozze</a></li>
+    <li><a href="#dono">Per chi desidera farci un dono</a></li>
+  </ul>
+</nav>
+
+
   <div id="intro">
     <div class="intro-content">
       <h1>Pietro e Verdiana</h1>
@@ -37,7 +51,7 @@
     <div class="hero-content">
       <h1>Pietro e Verdiana</h1>
       <p>1 Giugno 2026</p>
-      <a class="btn" href="#rsvp">Benvenuti nel nostro Sì(to)! Scoprite tutti i dettagli scorrendo in basso.</a>
+      <a class="btn" href="#rsvp">Benvenuti nel nostro Sì(to)! Scoprite tutti i dettagli scorrendo in basso o utilizzando la sidebar a sinistra</a>
     </div>
   </header>
 
@@ -68,20 +82,22 @@ Nella partecipazione abbiamo voluto raccontare un dettaglio di noi: ogni element
 <section id="gallery" class="card">
   <h2>Gallery</h2>
   
-  <!-- Testo introduttivo -->
-  <p>In questa sezione vogliamo condividere con voi alcuni dei momenti più belli della nostra vita insieme: risate, viaggi, avventure quotidiane e piccoli ricordi che ci hanno unito sempre di più. Ogni foto racconta una parte di noi, e siamo felici di poterla mostrare anche a voi!</p>
+  <p>In questa sezione vogliamo condividere con voi alcuni dei momenti più belli della nostra vita insieme. Clicca sulle foto e scopri di più in basso!</p>
   
   <div class="gallery-grid">
-    <img src="Foto11.jpeg" alt="Foto nostra 11">
-    <img src="Foto22.jpeg" alt="Foto nostra 22">
-    <img src="Foto33.jpeg" alt="Foto nostra 33">
-    <img src="Foto44.jpeg" alt="Foto nostra 44">
-    <img src="Foto55.jpeg" alt="Foto nostra 55">
-    <img src="Foto66.jpeg" alt="Foto nostra 66">
-    <img src="Foto77.jpeg" alt="Foto nostra 77">
-    <img src="Foto88.jpeg" alt="Foto nostra 88">
-    <img src="Foto99.jpeg" alt="Foto nostra 99">
+    <img src="Foto11.jpeg" alt="Foto nostra 11" data-caption="Una delle nostre prime foto assieme. Ad UNIPA... quanti ricordi 😍🥺">
+    <img src="Foto22.jpeg" alt="Foto nostra 22" data-caption="Tramonto magico allo Stagnone di Marsala 🌅💑✨ – Momenti che resteranno per sempre nel nostro cuore 💖">
+    <img src="Foto33.jpeg" alt="Foto nostra 33" data-caption="Avventure sulla neve insieme ❄️❤️ – Risate, emozioni e ricordi che scaldano il cuore">
+    <img src="Foto44.jpeg" alt="Foto nostra 44" data-caption="La nostra colonna sonora comune ❤️🎵 – Un concerto di emozioni con Max Pezzali a Milano">
+    <img src="Foto55.jpeg" alt="Foto nostra 55" data-caption="Serata speciale, look impeccabile ✨💑 – Sorrisi e stile in perfetta armonia">
+    <img src="Foto66.jpeg" alt="Foto nostra 66" data-caption="Tra candele e risate ✨💛 – La nostra serata perfetta insieme">
+    <img src="Foto77.jpeg" alt="Foto nostra 77" data-caption="Dottorato e felice 🎓💑 – Non ce l’avrei fatta senza di te al mio fianco ❤️✨">
+    <img src="Foto88.jpeg" alt="Foto nostra 88" data-caption="Passeggiando tra storia e colori a Siviglia 🌺💑✨ – Momenti indimenticabili insieme">
+    <img src="Foto99.jpeg" alt="Foto nostra 99" data-caption="Amore e stile 💑✨ – Un bacio che racconta emozioni e felicità senza fine 💕">
   </div>
+
+  <!-- Contenitore per mostrare la didascalia -->
+  <p id="photo-caption" style="text-align:center; font-style:italic; margin-top:10px; color:#444;"></p>
 </section>
 
 
@@ -216,10 +232,10 @@ Nella partecipazione abbiamo voluto raccontare un dettaglio di noi: ogni element
   </p>
 </section>
 
-    <section class="card">
-      <h2>Per chi desidera farci un dono...</h2>
-      <p>Il dono più bello e significativo rimane certamente la vostra presenza con noi nel nostro giorno più importante. Se desiderate farci un ulteriore regalo, saremo grati per un piccolo contributo nell'inizio della nostra vita matrimoniale, in busta o al seguente IBAN: IT123456789011121314001 - Intestato a: Pietro Scala.</p>
-    </section>
+<section id="dono" class="card">
+  <h2>Per chi desidera farci un dono...</h2>
+  <p>Il dono più bello e significativo rimane certamente la vostra presenza con noi nel nostro giorno più importante. Se desiderate farci un ulteriore regalo, saremo grati per un piccolo contributo nell'inizio della nostra vita matrimoniale, in busta o al seguente IBAN: IT123456789011121314001 - Intestato a: Pietro Scala.</p>
+</section>
   </main>
 
   <footer>

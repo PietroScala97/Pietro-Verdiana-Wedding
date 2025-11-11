@@ -326,3 +326,70 @@ h2 {
 }
 
 
+
+/* Sidebar verticale */
+#sidebar {
+  position: fixed;
+  top: 100px;       /* distanza dall’inizio della pagina */
+  left: 20px;
+  width: 200px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  margin: 8px 0;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+#sidebar ul li a:hover {
+  background: #7BAFD4;
+  color: #fff;
+}
+
+/* Mobile: sidebar collapsabile */
+@media (max-width: 768px) {
+  #sidebar {
+    position: static;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    top: auto;
+    left: auto;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 5px 0;
+  }
+
+  #sidebar ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  #sidebar ul li {
+    margin: 0;
+  }
+
+  #sidebar ul li a {
+    padding: 8px 12px;
+  }
+}
+

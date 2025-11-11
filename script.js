@@ -77,3 +77,29 @@ const observer = new IntersectionObserver(entries => {
 
 titles.forEach(title => observer.observe(title));
 
+
+
+
+
+// Mostra didascalia al click sulla foto
+const galleryImages = document.querySelectorAll('.gallery-grid img');
+const captionBox = document.getElementById('photo-caption');
+
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => {
+    const caption = img.getAttribute('data-caption') || '';
+    captionBox.textContent = caption;
+  });
+});
+
+
+
+// Scroll smooth per sidebar
+document.querySelectorAll('#sidebar a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetEl = document.getElementById(targetId);
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
