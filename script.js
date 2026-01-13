@@ -103,3 +103,66 @@ document.querySelectorAll('#sidebar a').forEach(link => {
     targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+
+
+// --- CONFIG CLOUDINARY ---
+const CLOUD_NAME = "dhomdjmwc";           // Il tuo Cloud Name
+const UPLOAD_PRESET = "Wedding_Photo_P_V"; // Il preset creato su Cloudinary
+const FOLDER_NAME = "Wedding_Photo_P_V";   // Cartella dove salvare le foto
+
+// --- FUNZIONE UPLOAD FOTO ---
+function uploadPhotos() {
+  const files = document.getElementById("photoInput").files;
+  const status = document.getElementById("upload-status");
+
+  if (!files.length) {
+    status.innerText = "Seleziona almeno una foto.";
+    return;
+  }
+
+  status.innerText = "Caricamento in corso...";
+
+  for (let file of files) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", UPLOAD_PRESET);
+    formData.append("folder", FOLDER_NAME); // Salva nella cartella specifica
+
+    fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      // Mostra la foto appena caricata nella gallery
+      const img = document.createElement("img");
+      img.src = data.secure_url;
+      img.style.width = "150px"; // puoi personalizzare
+      img.style.margin = "5px";
+      document.getElementById("guest-gallery").appendChild(img);
+      status.innerText = "Upload completato 🎉";
+    })
+    .catch(() => {
+      status.innerText = "Errore durante l'upload";
+    });
+  }
+}
+
+// --- CARICA FOTO GIÀ PRESENTI SU CLOUDINARY ALL'AVVIO ---
+window.addEventListener("load", () => {
+  fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/${FOLDER_NAME}.json`)
+    .then(res => res.json())
+    .then(data => {
+      data.resources.forEach(img => {
+        const image = document.createElement("img");
+        image.src = img.secure_url;
+        image.style.width = "150px";
+        image.style.margin = "5px";
+        document.getElementById("guest-gallery").appendChild(image);
+      });
+    })
+    .catch(() => {
+      console.log("Nessuna immagine trovata o errore fetch Cloudinary");
+    });
+});
