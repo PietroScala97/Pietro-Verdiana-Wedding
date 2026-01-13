@@ -393,3 +393,20 @@ h2 {
   }
 }
 
+#guest-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#guest-gallery img {
+  border-radius: 8px;
+  max-width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#guest-gallery img:hover {
+  transform: scale(1.05);
+}
