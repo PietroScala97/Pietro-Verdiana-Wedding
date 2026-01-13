@@ -36,6 +36,7 @@
     <li><a href="#Conferma-di-Partecipazione">Conferma di Partecipazione</a></li>
     <li><a href="#visite">Visite di Nozze</a></li>
     <li><a href="#dono">Per chi desidera farci un dono</a></li>
+<li><a href="#guest-photos">Foto degli invitati</a></li>
   </ul>
 </nav>
 
@@ -236,6 +237,26 @@ Nella partecipazione abbiamo voluto raccontare un dettaglio di noi: ogni element
   <h2>Per chi desidera farci un dono...</h2>
   <p>Il dono più bello e significativo rimane certamente la vostra presenza con noi nel nostro giorno più importante. Se desiderate farci un ulteriore regalo, saremo grati per un piccolo contributo nell'inizio della nostra vita matrimoniale, in busta o al seguente IBAN: IT44C0306981781100000009916 - Intestato a: Pietro Scala.</p>
 </section>
+
+<section id="guest-photos" class="card">
+  <h2>Foto degli invitati 📸</h2>
+  <p>
+    In questo spazio potete caricare e condividere le foto scattate
+    durante il matrimonio. Saranno visibili a tutti gli invitati!
+  </p>
+
+  <!-- Input per selezionare più foto -->
+  <input type="file" id="photoInput" accept="image/*" multiple>
+  <button onclick="uploadPhotos()">Carica foto</button>
+
+  <!-- Stato upload -->
+  <p id="upload-status" class="muted"></p>
+
+  <!-- Gallery foto caricate -->
+  <div class="gallery-grid" id="guest-gallery"></div>
+</section>
+
+
   </main>
 
   <footer>
@@ -245,6 +266,3 @@ Nella partecipazione abbiamo voluto raccontare un dettaglio di noi: ogni element
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
