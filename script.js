@@ -111,8 +111,49 @@ const CLOUD_NAME = "dhomdjmwc";           // Il tuo Cloud Name
 const UPLOAD_PRESET = "Wedding_Photo_P_V"; // Il preset creato su Cloudinary
 const FOLDER_NAME = "Wedding_Photo_P_V";   // Cartella dove salvare le foto
 
-// --- FUNZIONE UPLOAD FOTO ---
-function uploadPhotos() {
+// --- FUNZIONE PER RIDIMENSIONARE LE FOTO PRIMA DELL'UPLOAD ---
+function resizeImage(file, maxWidth = 1920, maxHeight = 1920) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = e => {
+      img.src = e.target.result;
+    };
+
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      let width = img.width;
+      let height = img.height;
+
+      if (width > height) {
+        if (width > maxWidth) {
+          height *= maxWidth / width;
+          width = maxWidth;
+        }
+      } else {
+        if (height > maxHeight) {
+          width *= maxHeight / height;
+          height = maxHeight;
+        }
+      }
+
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, width, height);
+
+      canvas.toBlob(blob => {
+        resolve(new File([blob], file.name, { type: "image/jpeg" }));
+      }, "image/jpeg", 0.85); // qualità 85%
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+// --- NUOVA FUNZIONE UPLOAD FOTO ---
+async function uploadPhotos() {
   const files = document.getElementById("photoInput").files;
   const status = document.getElementById("upload-status");
 
@@ -124,30 +165,35 @@ function uploadPhotos() {
   status.innerText = "Caricamento in corso...";
 
   for (let file of files) {
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", UPLOAD_PRESET);
-    formData.append("folder", FOLDER_NAME); // Salva nella cartella specifica
+    // Ridimensiona e comprime la foto
+    const resizedFile = await resizeImage(file);
 
-    fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-      method: "POST",
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      // Mostra la foto appena caricata nella gallery
+    const formData = new FormData();
+    formData.append("file", resizedFile);
+    formData.append("upload_preset", UPLOAD_PRESET);
+    formData.append("folder", FOLDER_NAME); // Cartella Cloudinary
+
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+        method: "POST",
+        body: formData
+      });
+      const data = await res.json();
+
       const img = document.createElement("img");
       img.src = data.secure_url;
-      img.style.width = "150px"; // puoi personalizzare
+      img.style.width = "150px";
       img.style.margin = "5px";
       document.getElementById("guest-gallery").appendChild(img);
+
       status.innerText = "Upload completato 🎉";
-    })
-    .catch(() => {
+    } catch (err) {
+      console.error(err);
       status.innerText = "Errore durante l'upload";
-    });
+    }
   }
 }
+
 
 // --- CARICA FOTO GIÀ PRESENTI SU CLOUDINARY ALL'AVVIO ---
 window.addEventListener("load", () => {
@@ -166,3 +212,4 @@ window.addEventListener("load", () => {
       console.log("Nessuna immagine trovata o errore fetch Cloudinary");
     });
 });
+
